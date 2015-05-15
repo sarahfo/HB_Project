@@ -1,0 +1,58 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
+    
+    <link rel="stylesheet" href="/static/css/site.css"/>
+    
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'>
+    </script>
+	<iframe width='70%' height='500px' frameBorder='2' src='https://a.tiles.mapbox.com/v4/sarahfo.c4d23616/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic2FyYWhmbyIsImEiOiJaQmdHLWZJIn0.eEg4zenYs0-qcPsMBZ9i1g'>
+	</iframe>
+
+</head>
+
+<body>
+
+	<div id='map'></div>
+		<script>
+		L.mapbox.accessToken = 'pk.eyJ1Ijoic2FyYWhmbyIsImEiOiJaQmdHLWZJIn0.eEg4zenYs0-qcPsMBZ9i1g';
+		var map = L.mapbox.map('map', 'sarahfo.c4d23616').setView([37.763, -122.486,] 13);
+		</script>
+
+<!-- FORM - MAYBE PUT ON SEPARATE DOC -->
+	<form id="Yelp_Categories" action="" method="GET">
+  		<label> 
+  		<input type="checkbox" name="category_filter" value="grocery">
+  		 Grocery Stores </label><br>
+  		<label>
+  		<input type="checkbox" name="category_filter" value="gyms"> 
+  		 Gyms </label><br>
+  		<label>
+		<input type="checkbox" name="category_filter" value="restaurants">
+		 Restaurants </label><br>
+		<label>
+		<input type="checkbox" name="category_filter" value="divebars">
+		 Dive Bars </label><br>
+		<label>
+  		<input type="checkbox" name="category_filter" value="gaybars">
+  		 Gay Bars </label><br>
+  		<label>
+		<input type="checkbox" name="category_filter" value="meditationcenters">
+		 Meditation Centers</label><br>
+		<label>
+  		<input type="checkbox" name="category_filter" value="yoga">
+  		 Yoga</label><br>
+  		<label>
+  		<input type="checkbox" name="category_filter" value="rock_climbing">
+  		 Rock Climbing</label>
+  		<br>
+
+		<input type="submit" value="Display">
+	</form>
+
+
+</body>
+</html>
