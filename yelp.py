@@ -19,6 +19,7 @@ def main():
 def get_results(params):
  
 	#Obtain these from Yelp's manage access page
+	#Good practice of getting the key from somewhere else other than storing it in your db
 	consumer_key=os.environ['YELP_CONSUMER_KEY']
 	consumer_secret=os.environ['YELP_CONSUMER_SECRET']
 	token=os.environ['YELP_ACCESS_TOKEN_KEY']
@@ -37,6 +38,7 @@ def get_results(params):
 	session.close()
 	
 	return data	
+
 # We are going to make a call to Yelp API.  First, define the search parameters.  I'm going to set this
 # at grocery for now, but adjust later.  This request is asking for you to pass it a lat & longitude, I'll use
 # SF for now and manually enter it: 37.783, -122.41
