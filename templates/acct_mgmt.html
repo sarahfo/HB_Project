@@ -1,0 +1,44 @@
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-4">
+            <h3>Log In</h3>
+            <form id ="login" method="POST" action="/loginsuccessful">
+                <label>Email:
+                    <br>
+                    <input type="text" name="email">
+                </label>
+            <br>
+            <br>
+                <label>Password:
+                    <br>
+                    <input type="password" name="password">
+                </label>
+            <br>
+            <br>
+                <input type="submit" value="Log In">
+            </form>
+        </div>
+        <div class="col-xs-12 col-md-8">
+            <h3>Register</h3>
+            <form id="reg" method="POST" action="/registration">
+                <label>Email:
+                    <br>
+                    <input type="text" name="email">
+                </label>
+            <br>
+            <br>
+                <label>Enter a Password:
+                    <br>
+                    <input type="text" name="password">
+                </label>
+            <br>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
