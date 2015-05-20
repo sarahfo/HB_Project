@@ -34,25 +34,27 @@ def index():
 
 
     # """Gets the list of user-selected categories and sends them to Yelp API"""
-# The above syntax should return the checked items as a list
+# This syntax should return the checked items as a list
         yelp_search_selection = request.args.getlist('category_filter')
 
 # now make them non-unicode   
         yelp_search = ",".join(yelp_search_selection)
- 
-# Print Yelp Search list to confirm they aren't unicode and they look nice.
-    # data = get_results(make_search_params(yelp_search))
-        get_results(make_search_parameters(yelp_search))
+
+# This should grab the location selected from the drop-down.
+        yelp_location = request.args['location']
+
+# Call the functions and make it work!
+        get_results(make_search_parameters(yelp_search, yelp_location))
 
 #I'm just doing the render template to be superstitious.
     return render_template("base.html")
 
 
-def make_search_parameters(yelp_search):
+def make_search_parameters(yelp_search, yelp_location):
     #Yelp API defines the key names to pass in as parameters.
     params = {}
     params['category_filter'] = yelp_search
-    params ["location"] = "Chicago, IL"
+    params ["location"] = yelp_location
     ## params ['limit'] = TBD
     # print params
     return params
@@ -77,7 +79,7 @@ def get_results(params):
     #print data
 
 
-# URL example for San Francisco: api.yelp.com/v2/search/?location=San Francisco, CA&limit=13&category_filter=yoga
+
 
 if __name__ == '__main__':
     app.run(debug=True)
