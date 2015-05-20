@@ -1,4 +1,1 @@
-env
-env/
-.pyc
-secrets.sh
+config.py env secrets.sh .pyc env/

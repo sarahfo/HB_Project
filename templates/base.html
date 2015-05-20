@@ -1,74 +1,117 @@
 <html>
 <head>
-
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
     <!-- <link rel="stylesheet" href="/static/css/site.css"/> -->
     <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet'/>
     <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'>
-    </script>
-	   
-
-     <!-- iframes belong inside the body tag -->
-     <iframe width='70%' height='500px' frameBorder='2' src='https://a.tiles.mapbox.com/v4/sarahfo.c4d23616/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic2FyYWhmbyIsImEiOiJaQmdHLWZJIn0.eEg4zenYs0-qcPsMBZ9i1g'>
-	   </iframe>
-
+    </script>  
 </head>
 
+                          <!-- NavBar -->
   <body>
+      <nav class="navbar navbar-default navbar-static-top">
+            <div class="container-fluid">               
+                    <div class="navbar-header">
+                          <button type="button"
+                                  class="navbar-toggle collapsed"
+                                  data-toggle="collapse"
+                                  data-target="#navbar"
+                                  aria-expanded="false"
+                                  aria-controls="navbar">
+                              <span class="sr-only">Toggle navigation</span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                          </button>
+                              <a class="navbar-brand" href="#">Home Hunter</a>
+                    </div>  <!-- navbar header close -->
+                          <div id="navbar" class="navbar-collapse collapse">
+                              <ul class="nav navbar-nav navbar-left">
+                                  <li class="active"><a href="#">Home</a></li>
+                                  <!-- <li><a href="#">About Us</a></li>
+                                  <li><a href="#">Contact</a></li> -->
+                                  </li>
+                              </ul>
+                              <ul class="nav navbar-nav navbar-right">
+                                  <li><a href="#">Profile</a></li>
+                                  <li><a href="#">Log In</a></li>
+                              </ul>
+                          </div>
+              </div>
+      </nav>
+                                <!-- Map -->
+<div class="container">
+  <div class="row">
+      <div class="col-md-9">
+        <div id='map'>
+            <iframe width='85%' height='550px' frameBorder='2' src='https://a.tiles.mapbox.com/v4/sarahfo.c4d23616/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic2FyYWhmbyIsImEiOiJaQmdHLWZJIn0.eEg4zenYs0-qcPsMBZ9i1g'>
+            </iframe>
 
-	 <div id='map'></div>
-
-  		<script>
-  		
-      L.mapbox.accessToken = 'pk.eyJ1Ijoic2FyYWhmbyIsImEiOiJaQmdHLWZJIn0.eEg4zenYs0-qcPsMBZ9i1g';
-  		var map = L.mapbox.map('map', 'sarahfo.c4d23616').setView([37.763, -122.486,] 13);
-  		
-      </script>
-
-<!-- FORM - MAYBE PUT ON SEPARATE DOC -->
-	 <form id="Yelp_Categories" method="GET">
-      	<label> 
-      		<input type="checkbox" name="category_filter" value="grocery">
-      		Grocery Stores 
-        </label>
-        <br>
-      	<label>
-      		<input type="checkbox" name="category_filter" value="gyms"> 
-      		Gyms 
-        </label>
-        <br>
-      	<label>
-    		  <input type="checkbox" name="category_filter" value="restaurants">
-    		 Restaurants 
-        </label>
-        <br>
-    		<label>
-    		  <input type="checkbox" name="category_filter" value="divebars">
-    		 Dive Bars 
-        </label>
-        <br>
-    		<label>
-      		<input type="checkbox" name="category_filter" value="gaybars">
-      		 Gay Bars 
-        </label>
-        <br>
-      	<label>
-    		  <input type="checkbox" name="category_filter" value="meditationcenters">
-    		 Meditation Centers
-        </label>
-        <br>
-    		<label>
-      		<input type="checkbox" name="category_filter" value="yoga">
-      		 Yoga
-        </label>
-        <br>
-      	<label>
-      		<input type="checkbox" name="category_filter" value="rock_climbing">
-      		 Rock Climbing
-        </label>
-      	<br>
-		      <input type="submit" value="Display">
-	 </form>
+          	<script>
+              L.mapbox.accessToken = 'pk.eyJ1Ijoic2FyYWhmbyIsImEiOiJaQmdHLWZJIn0.eEg4zenYs0-qcPsMBZ9i1g';
+          		var map = L.mapbox.map('map', 'sarahfo.c4d23616').setView([37.763, -122.486,] 13);
+            </script>
+      </div>
+    </div>
+<!-- FORM - MAYBE PUT ON SEPARATE DOC? -->
+      <div class="col-md-3">
+         <form id="Yelp_Business_Search" method="GET">
+              <select name="location" id="city">
+                  <option value="none" selected="not-selected">Select a City</option>
+                  <option value="San Francisco, CA">San Francisco</option>
+                  <option value="San Diego, CA">San Diego</option>
+                  <option value="Seattle, WA">Seattle</option>
+                  <option value="Portland, OR">Portland</option>
+              </select>
+              <br>
+              <br>
+              <br>
+             <h5> Search For: </h5>
+            	<label> 
+            		<input type="checkbox" name="category_filter" value="grocery">
+            		Grocery Stores 
+              </label>
+              <br>
+            	<label>
+            		<input type="checkbox" name="category_filter" value="gyms"> 
+            		Gyms 
+              </label>
+              <br>
+            	<label>
+          		  <input type="checkbox" name="category_filter" value="restaurants">
+          		 Restaurants 
+              </label>
+              <br>
+          		<label>
+          		  <input type="checkbox" name="category_filter" value="divebars">
+          		 Dive Bars 
+              </label>
+              <br>
+          		<label>
+            		<input type="checkbox" name="category_filter" value="gaybars">
+            		 Gay Bars 
+              </label>
+              <br>
+            	<label>
+          		  <input type="checkbox" name="category_filter" value="meditationcenters">
+          		 Meditation Centers
+              </label>
+              <br>
+          		<label>
+            		<input type="checkbox" name="category_filter" value="yoga">
+            		 Yoga
+              </label>
+              <br>
+            	<label>
+            		<input type="checkbox" name="category_filter" value="rock_climbing">
+            		 Rock Climbing
+              </label>
+            	<br>
+      		      <input type="submit" value="Display">
+      	 </form>
+      </div>
+    </div>
+  </div>
 
 
   </body>
