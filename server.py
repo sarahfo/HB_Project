@@ -29,7 +29,7 @@ def index():
     print request.method
     if request.args:
 
-"""Gets the list of user-selected categories and location and sends them to Yelp API"""
+        """Gets the list of user-selected categories and location and sends them to Yelp API"""
 
 # This syntax returns the user-checked items as a list
         yelp_search_selection = request.args.getlist('category_filter')
@@ -77,6 +77,24 @@ def get_results(params):
     auth_session.close()
     pprint.pprint(data)
     # return data
+
+
+# def get_homes_for_sale(location):
+
+    # get the city user selected from the drop-down.
+    # homes_in = request.args['location']
+
+    # query the db for homes in that city/neighborhood.
+    # QUERY:
+
+    # return results
+
+
+# def POPULATE THE MAP!
+# put the houses/yelp results on map!
+
+# def clear_map_on_click():
+    # allow users to clear/search again
 
 
 if __name__ == '__main__':
